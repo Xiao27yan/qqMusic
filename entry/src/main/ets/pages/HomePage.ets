@@ -1,5 +1,6 @@
 
 import {ImageList,ImageDomin} from '../domain/ImageDomain'
+import {scrollMusic} from  '../components/scrollMusic'
 import {recommend} from  '../route/HomePage/recommed'
 @Entry
 @Component
@@ -22,6 +23,7 @@ struct HomePage{
       Tabs({barPosition:BarPosition.Start,index:this.selectedIndex,controller:this.controller}){
         TabContent(){
           recommend()
+
 
         }.tabBar(this.TabBarBuilder('推荐',0))
         TabContent(){

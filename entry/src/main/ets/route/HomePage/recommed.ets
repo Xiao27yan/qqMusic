@@ -1,3 +1,4 @@
+import { scrollMusic } from '../../components/scrollMusic'
 import {searchBox} from '../../components/searchBox'
 @Entry
 @Component
@@ -8,7 +9,9 @@ struct recommend{
        searchBox()
        Image($r('app.media.money')).width(40)
        Image($r('app.media.music')).width(40)
+
      }
+      scrollMusic()
 
     }
     .width('100%')
