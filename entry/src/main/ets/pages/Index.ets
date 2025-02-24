@@ -8,15 +8,22 @@ import {musicList} from '../domain/MusicsDomin'
 @Entry
 @Component
 struct Index {
+  @State duration: number=1
   @State message: string = 'Hello World';
   private avPlayer: media.AVPlayer | null = null;
   @StorageLink ('isPlay') @Watch('gotoPlay')  isPlay:boolean = false
   @StorageLink ('name') name:string = 'qwq'
   @StorageLink('singer') singer:string='ovo'
   @StorageLink('img') img:Resource=$r('app.media.XiaoYan')
-  @StorageLink('progress') progress:number=100
+  @StorageLink('progress') progress:number=0
+  @StorageLink('qwq') @Watch('changeSeek') qwq:number=0
   @StorageLink('playIndex') @Watch('changeIndex') playIndex:number=3
 
+  changeSeek(){
+    if(this.avPlayer){
+      this.avPlayer.seek(this.qwq*0.01*this.avPlayer.duration)
+    }
+  }
   setAvplayerCallback(){
     if(this.avPlayer){
       this.avPlayer.on('error',(err)=>{
@@ -24,6 +31,25 @@ struct Index {
         console.log('重启avPlayer')
         this.avPlayer?.reset()
       })
+
+      this.avPlayer.on('seekDone', (seekDoneTime: number) => {
+        console.info(`AVPlayer seek succeeded, seek time is ${seekDoneTime}`);
+      });
+
+
+
+      this.avPlayer.on('timeUpdate',(current)=>{
+        console.log('播放时间'+current)
+        this.progress = 100*current/this.duration
+        console.log('播放进度'+this.progress)
+      })
+      this.avPlayer.on('seekDone', (seekDoneTime: number) => {
+        console.info(`AVPlayer seek succeeded, seek time is ${seekDoneTime}`);
+      });
+
+      // this.avPlayer.on('speedDone',(qwq)=>{
+      //   console.log('播放速度改变'+qwq)
+      // })
 
       this.avPlayer.on('stateChange',(state)=>{
         switch (state){
@@ -42,6 +68,10 @@ struct Index {
           case 'prepared':
             console.log('avPlayer准备就绪');
               this.avPlayer?.play()
+            console.log(this.avPlayer?.duration+'aaaaaaaaaaa')
+            if(this.avPlayer?.duration){
+              this.duration = this.avPlayer?.duration
+            }
             console.log('开始播放')
             break
           case 'paused': // pause成功调用后触发该状态机上报

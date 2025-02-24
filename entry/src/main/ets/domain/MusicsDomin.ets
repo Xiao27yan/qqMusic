@@ -22,15 +22,17 @@ export class Music {
   singer:string;
   url: string;
   imageUrl: string;
-  introduction:string
+  introduction:string;
+  time:number
 
-  constructor(index: number, name: string,singer:string,introduction:string, url: string, imageUrl: string) {
+  constructor(index: number, name: string,singer:string,introduction:string, url: string, imageUrl: string,time:number) {
     this.index = index;
     this.name = name;
     this.introduction = introduction;
     this.url = url;
     this.imageUrl = imageUrl;
-    this.singer = singer
+    this.singer = singer;
+    this.time = time
   }
 }
 
@@ -41,7 +43,8 @@ export  const musicList:Music[] = [
     '周杰伦',
     '故事的小黄花',
     'https://oss-java-galaxy.oss-cn-beijing.aliyuncs.com/MUSIC/Akie%E7%A7%8B%E7%BB%98%20-%20%E8%87%B4%E5%B7%9D%E6%B5%81%E7%9A%84%E6%97%A0%E5%90%8D%E8%AF%97.mp3',
-    'https://xiaojiaxiaoyan.oss-cn-hangzhou.aliyuncs.com/musicImage/huahai.jpg'),
+    'https://xiaojiaxiaoyan.oss-cn-hangzhou.aliyuncs.com/musicImage/huahai.jpg',
+  194),
   new Music(
     1,
     "致川流的无名诗",
@@ -49,7 +52,7 @@ export  const musicList:Music[] = [
     "介绍",
     "https://oss-java-galaxy.oss-cn-beijing.aliyuncs.com/MUSIC/Akie%E7%A7%8B%E7%BB%98%20-%20%E8%87%B4%E5%B7%9D%E6%B5%81%E7%9A%84%E6%97%A0%E5%90%8D%E8%AF%97.mp3",
     "https://oss-java-galaxy.oss-cn-beijing.aliyuncs.com/MUSIC/%E8%87%B4%E5%B7%9D%E6%B5%81%E7%9A%84%E6%97%A0%E5%90%8D%E8%AF%97.jpg"
-  ),
+  ,194),
   new Music(
     2,
     "恋之虫",
@@ -57,7 +60,7 @@ export  const musicList:Music[] = [
     "介绍",
     "https://oss-java-galaxy.oss-cn-beijing.aliyuncs.com/MUSIC/%E8%8A%B1%E3%81%9F%E3%82%93%20-%20%E6%81%8B%E3%83%8E%E8%9F%B2.mp3",
     "https://oss-java-galaxy.oss-cn-beijing.aliyuncs.com/MUSIC/%E6%81%8B%E4%B9%8B%E8%99%AB.jpg"
-  ),
+  ,194),
   new Music(
     3,
     "Albemuth - 新世界",
@@ -65,7 +68,7 @@ export  const musicList:Music[] = [
     "介绍",
     "https://oss-java-galaxy.oss-cn-beijing.aliyuncs.com/MUSIC/Albemuth%20-%20%E6%96%B0%E4%B8%96%E7%95%8C%E3%81%B8.mp3",
     "https://oss-java-galaxy.oss-cn-beijing.aliyuncs.com/MUSIC/%E6%96%B0%E4%B8%96%E7%95%8C.jpg"
-  ),
+  ,260),
   new Music(
     4,
     "世末歌者",
@@ -73,7 +76,7 @@ export  const musicList:Music[] = [
     "介绍",
     "https://oss-java-galaxy.oss-cn-beijing.aliyuncs.com/MUSIC/%E5%8F%8C%E7%AC%99%EF%BC%88%E9%99%88%E5%85%83%E6%B1%90%EF%BC%89%20%E5%B0%81%E8%8C%97%E5%9B%A7%E8%8F%8C%20-%20%E4%B8%96%E6%9C%AB%E6%AD%8C%E8%80%85%EF%BC%88Cover%20%E4%B9%90%E6%AD%A3%E7%BB%AB%EF%BC%89.mp3",
     "https://oss-java-galaxy.oss-cn-beijing.aliyuncs.com/MUSIC/%E4%B8%96%E6%9C%AB%E6%AD%8C%E8%80%85.jpg"
-  ),
+  ,326),
   new Music(
     5,
     "星と君が消えた日.mp3",
@@ -81,7 +84,7 @@ export  const musicList:Music[] = [
     "介绍",
     "https://oss-java-galaxy.oss-cn-beijing.aliyuncs.com/MUSIC/%E6%B3%A0%E9%B8%A2yousa%20-%20%E6%98%9F%E3%81%A8%E5%90%9B%E3%81%8C%E6%B6%88%E3%81%88%E3%81%9F%E6%97%A5.mp3",
     "https://oss-java-galaxy.oss-cn-beijing.aliyuncs.com/MUSIC/%E6%98%9F%E4%B8%8E%E4%BD%A0%E6%B6%88%E5%A4%B1%E4%B9%8B%E6%97%A5.jpg"
-  )
+  ,201)
 
 ]
 

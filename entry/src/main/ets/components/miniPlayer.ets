@@ -8,7 +8,7 @@ export struct miniPlayer{
   @StorageLink ('name') name:string = 'qwq'
   @StorageLink('singer') singer:string='ovo'
   @StorageLink('img') img:Resource=$r('app.media.XiaoYan')
-  @StorageLink('progress') progress:number=100
+  @StorageLink('progress') progress:number=0
   @StorageLink('playIndex') playIndex:number=3
   @State intervalNumber: number = 0
 
@@ -33,10 +33,22 @@ export struct miniPlayer{
     Column(){
 
       Row(){
-        Progress({value:this.progress})
-          .height(2)
-          .backgroundColor(Color.Black)
-          .width('100%')
+        Stack(){
+          Slider({
+            value: this.progress, // 当前滑块值
+            min: 0,
+            max: 100,
+          }).onChange((value) => {
+            AppStorage.set('qwq',value)
+
+          })
+          Progress({value:this.progress})
+            .height(2)
+            .backgroundColor(Color.Black)
+            .width('100%')
+
+        }
+
       }
 
       Row(){

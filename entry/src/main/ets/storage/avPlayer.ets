@@ -4,3 +4,4 @@ AppStorage.setOrCreate('singer', '');
 AppStorage.setOrCreate('progress', 0);
 AppStorage.setOrCreate('img',ResponseType);
 AppStorage.setOrCreate('playIndex',3);
+AppStorage.setOrCreate('qwq',0);
