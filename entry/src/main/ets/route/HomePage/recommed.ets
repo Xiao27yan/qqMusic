@@ -14,6 +14,7 @@ struct recommend{
       scrollMusic()
 
     }
+    .alignItems(HorizontalAlign.Center)
     .width('100%')
     .height('100%')
 

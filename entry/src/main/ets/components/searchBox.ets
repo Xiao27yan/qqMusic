@@ -1,13 +1,13 @@
-import {Music,HotMusicList} from '../domain/MusicsDomin'
+import {HotMusic,HotMusicList} from '../domain/MusicsDomin'
 @Entry
 @Component
 struct searchBox{
   @Builder
-  qwq(){
+   qwq(){
     Row(){
       Image($r('app.media.xianggu')).width(20).margin({left:20})
       Swiper(){
-        ForEach(HotMusicList,(item:Music)=>{
+        ForEach(HotMusicList,(item:HotMusic)=>{
           Text(item.musicName+':'+item.introduction).fontColor(Color.White).fontSize(10)
 
         })
