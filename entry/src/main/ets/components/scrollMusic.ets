@@ -24,6 +24,8 @@ import { Music, musicList } from '../domain/MusicsDomin'
 
       Scroll(){
           Row(){
+            Flex(){}
+
             ForEach(musicList,(item:Music)=>{
               Row(){
                 Column(){
@@ -42,10 +44,9 @@ import { Music, musicList } from '../domain/MusicsDomin'
                 AppStorage.set('playIndex',item.index)
 
               })
-              .margin({left:10})
+              .margin({left:3})
               .borderRadius('3%')
               .height(130)
-
               .backgroundColor('#FFB8D2E5')
               .justifyContent(FlexAlign.SpaceBetween)
             })
@@ -57,8 +58,6 @@ import { Music, musicList } from '../domain/MusicsDomin'
 
     }
     .alignItems(HorizontalAlign.Start)
-    .height(130)
-    .width('95%')
 
   }
 }

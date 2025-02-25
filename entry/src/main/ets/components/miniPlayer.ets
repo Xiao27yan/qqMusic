@@ -70,7 +70,7 @@ export struct miniPlayer{
             Text(musicList[this.playIndex].name)
               .fontSize(14)
               .fontWeight(600)
-            Text(musicList[this.playIndex].singer)
+            Text(musicList[this.playIndex].singer).constraintSize({ maxWidth: 100 }).maxLines(1)
           }
 
 

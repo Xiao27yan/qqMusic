@@ -1,5 +1,6 @@
 import { scrollMusic } from '../../components/scrollMusic'
 import {searchBox} from '../../components/searchBox'
+import {selectedSongs}from '../../components/selectedSongs'
 @Entry
 @Component
 struct recommend{
@@ -11,11 +12,12 @@ struct recommend{
        Image($r('app.media.music')).width(40)
 
      }
-      scrollMusic()
+      scrollMusic().width('100%')
+      selectedSongs().height('50%').width('100%')
 
     }
     .alignItems(HorizontalAlign.Center)
-    .width('100%')
+    .width('95%')
     .height('100%')
 
   }

@@ -23,9 +23,18 @@ export class Music {
   url: string;
   imageUrl: string;
   introduction:string;
-  time:number
+  time:number;
+  private _isStar: boolean
 
-  constructor(index: number, name: string,singer:string,introduction:string, url: string, imageUrl: string,time:number) {
+  public set isStar(value: boolean) {
+    this._isStar = value
+  }
+
+  public get isStar(): boolean {
+    return this._isStar
+  }
+
+  constructor(index: number, name: string,singer:string,introduction:string, url: string, imageUrl: string,time:number,isStar:boolean=false) {
     this.index = index;
     this.name = name;
     this.introduction = introduction;
@@ -33,8 +42,14 @@ export class Music {
     this.imageUrl = imageUrl;
     this.singer = singer;
     this.time = time
+    this._isStar =isStar
+
   }
+
+
 }
+
+
 
 export  const musicList:Music[] = [
   new Music(
